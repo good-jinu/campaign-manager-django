@@ -1,0 +1,8 @@
+version: '3'
+services:
+   web:
+       build: 
+        dockerfile: ./localbind.dockerfile
+       command: sh -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+       ports:
+           - "8000:8000"
